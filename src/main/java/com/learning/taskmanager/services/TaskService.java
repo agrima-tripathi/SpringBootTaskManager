@@ -3,6 +3,7 @@ import com.learning.taskmanager.entities.TaskEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,7 +11,7 @@ import java.util.Date;
 public class TaskService {
     private ArrayList<TaskEntity> tasks = new ArrayList<>();
     private int taskId =1;
-
+    private SimpleDateFormat deadlineFormatter = new SimpleDateFormat("yyyy-MM-dd");
     public TaskEntity addTask(String title, String description, String deadline){
         TaskEntity task = new TaskEntity();
         task.setId(taskId);
